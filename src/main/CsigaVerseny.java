@@ -4,8 +4,11 @@
  */
 package main;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,20 +30,38 @@ public class CsigaVerseny {
         this.RND = new Random();
         this.csigaAbra = "@_//";
         this.SCN = new Scanner(System.in);
+        this.fogadas = 2;
         
     }
     
     public void versenyIndit(int kor){
         this.fogadas();
+        
+        System.out.println("Megtetted a téted... A verseny indul!!");
+        try {
+            Thread.sleep(1500);  // Waits for 3000 milliseconds (3 seconds
+            } catch (InterruptedException e) {
+            e.printStackTrace();
+            }
+        try {
+               konzolTorol();
+            } catch (Exception ex) {
+                Logger.getLogger(CsigaVerseny.class.getName()).log(Level.SEVERE, null, ex);
+            }
         for (int i = 0; i < kor; i++) {
             System.out.println(this.versenyKor(i));
             try {
-            Thread.sleep(1000);  // Waits for 3000 milliseconds (3 seconds
+            Thread.sleep(2000);  // Waits for 3000 milliseconds (3 seconds
             } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-            System.out.print("\u001B[H\u001B[2J");
-            System.out.flush();
+            }
+           
+            try {
+                konzolTorol();
+            } catch (Exception ex) {
+                Logger.getLogger(CsigaVerseny.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
         System.out.println(this.versenyEredmeny());
     }
@@ -97,12 +118,16 @@ public class CsigaVerseny {
     public void fogadas(){
         do{
         System.out.println("Kérlek fogadj egy csigára\n PIROS[1] ZÖLD[2] KÉK[3]\n");
-        this.fogadas = SCN.nextInt();}while(!(this.fogadas > 0 && this.fogadas < 4));
+        this.fogadas = SCN.nextInt()-1;}while(!(this.fogadas > -1 && this.fogadas < 4));
         
     }
     
     
-    
+    public void konzolTorol() throws Exception {
+       new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+         
+        
+    }
     
         
         

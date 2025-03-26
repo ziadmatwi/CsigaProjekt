@@ -4,6 +4,8 @@
  */
 package main;
 
+import java.io.IOException;
+
 /**
  *
  * @author MatwiZiad(Szf_N_2024
@@ -12,8 +14,10 @@ public class Program {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
+     * @throws java.lang.InterruptedException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
         CsigaVerseny verseny = new CsigaVerseny();
         verseny.versenyIndit(3);
     }
