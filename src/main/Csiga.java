@@ -27,7 +27,7 @@ public class Csiga {
         }
         
         for (int i = 0; i < tavolsag; i++) {
-            this.haladas +=  " @_//";  
+            this.haladas +=  vonal;  
         }
     }
 
