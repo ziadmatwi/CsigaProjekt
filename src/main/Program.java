@@ -19,7 +19,7 @@ public class Program {
      */
     public static void main(String[] args) throws IOException, InterruptedException {
         CsigaVerseny verseny = new CsigaVerseny();
-        verseny.versenyIndit(3);
+        verseny.versenyIndit(5);
     }
     
 }

@@ -51,7 +51,7 @@ public class CsigaVerseny {
         for (int i = 0; i < kor; i++) {
             System.out.println(this.versenyKor(i));
             try {
-            Thread.sleep(2000);  // Waits for 3000 milliseconds (3 seconds
+            Thread.sleep(1500);  // Waits for 3000 milliseconds (3 seconds
             } catch (InterruptedException e) {
             e.printStackTrace();
             }
