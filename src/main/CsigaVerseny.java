@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class CsigaVerseny {
     private String[] szinLista;
     private Csiga[] csigak;
-    private String csigaAbra;
+    private final String csigaAbra;
     private final String RESET;
     private final Random RND;
     private int fogadas;
@@ -41,7 +41,7 @@ public class CsigaVerseny {
         try {
             Thread.sleep(1500);  // Waits for 3000 milliseconds (3 seconds
             } catch (InterruptedException e) {
-            e.printStackTrace();
+                System.out.println("Megszakítottak egy alvó threadet!");
             }
         try {
                konzolTorol();
@@ -53,7 +53,7 @@ public class CsigaVerseny {
             try {
             Thread.sleep(1500);  // Waits for 3000 milliseconds (3 seconds
             } catch (InterruptedException e) {
-            e.printStackTrace();
+                System.out.println("Megszakítottak egy alvó threadet!");
             }
            
             try {
@@ -72,7 +72,7 @@ public class CsigaVerseny {
         int haladas;
         for (int i = 0; i < listahossz; i++) {
             haladas = RND.nextInt(0,4);
-            if (RND.nextInt(1,15)==1){
+            if (RND.nextInt(1,16)==1){
                 csigaGyorsit(haladas,i);
             }
             else{
