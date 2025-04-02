@@ -15,8 +15,8 @@ import java.util.logging.Logger;
  * @author MatwiZiad(Szf_N_2024
  */
 public class CsigaVerseny {
-    private String[] szinLista;
-    private Csiga[] csigak;
+    private final String[] szinLista;
+    private final Csiga[] csigak;
     private final String csigaAbra;
     private final String RESET;
     private final Random RND;
@@ -39,7 +39,7 @@ public class CsigaVerseny {
         
         System.out.println("Megtetted a téted... A verseny indul!!");
         try {
-            Thread.sleep(1500);  // Waits for 3000 milliseconds (3 seconds
+            Thread.sleep(1500);  
             } catch (InterruptedException e) {
                 System.out.println("Megszakítottak egy alvó threadet!");
             }
@@ -51,7 +51,7 @@ public class CsigaVerseny {
         for (int i = 0; i < kor; i++) {
             System.out.println(this.versenyKor(i));
             try {
-            Thread.sleep(1500);  // Waits for 3000 milliseconds (3 seconds
+            Thread.sleep(1500);  
             } catch (InterruptedException e) {
                 System.out.println("Megszakítottak egy alvó threadet!");
             }
@@ -127,6 +127,14 @@ public class CsigaVerseny {
        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
          
         
+    }
+    
+    public Csiga[] getCsiga(){
+        return this.csigak;
+    }
+    
+    public void setFogadas(int ujErtek){
+        this.fogadas = ujErtek;
     }
     
         
